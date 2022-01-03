@@ -264,10 +264,10 @@ function UsersPage() {
     return (
         <div>
             <Container>
-                <div>
+                <div className="mb-4">
                     <span className="text-4xl text-gray-700">Users</span>
-                    <Table columns={columns} data={data} />
                 </div>
+                <Table columns={columns} data={data} />
             </Container>
         </div>
     );
