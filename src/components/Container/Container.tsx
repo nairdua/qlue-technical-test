@@ -1,0 +1,9 @@
+export function Container({ children }: { children: JSX.Element | JSX.Element[] }) {
+    return (
+        <div className="bg-white container lg:my-2 lg:mx-auto p-4 md:p-8 max-w-6xl shadow md:h-screen flex flex-col">
+            {children}
+        </div>
+    )
+}
+
+export default Container;
