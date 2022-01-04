@@ -2,6 +2,14 @@ import { useMemo } from "react";
 import LineChart from "../Chart/LineChart";
 import Container from "../Container/Container";
 import Table from "../Table/Table";
+import {
+  ComposableMap,
+  Geographies,
+  Geography,
+  Marker,
+  Point
+} from "react-simple-maps";
+
 
 function UsersPage() {
     const columns = useMemo(
@@ -307,9 +315,53 @@ function UsersPage() {
                 <div className="mt-4">
                   <LineChart data={chartData} />
                 </div>
+                <div className="mt-4">
+                  <span className="font-semibold">Recent signups</span>
+                  <RecentSignups />
+                </div>
             </Container>
         </div>
     );
+}
+
+function RecentSignups() {
+  const geoUrl = "https://raw.githubusercontent.com/zcreativelabs/react-simple-maps/master/topojson-maps/world-50m.json"
+  
+  const markers = [
+    { id: 1, coordinates: [106.8166, -6.2000] },
+    { id: 2, coordinates: [106.8307, -6.3855] },
+    { id: 3, coordinates: [106.8282, -6.4976] },
+    { id: 4, coordinates: [106.8166, -6.5950] },
+  ]
+
+  return (
+    <ComposableMap
+      projection="geoAzimuthalEqualArea"
+      projectionConfig={{
+        rotate: [-110.0, 5, 0],
+        scale: 2500
+      }}
+    >
+      <Geographies geography={geoUrl}>
+        {({ geographies }) => 
+          geographies
+            .map(geo => {
+              return <Geography
+                key={geo.rsmKey}
+                geography={geo}
+                fill="#EAEAEC"
+                stroke="#D6D6DA"
+              />
+            })
+        }
+      </Geographies>
+      {markers.map(({ id, coordinates }) => (
+        <Marker key={id} coordinates={coordinates as Point}>
+          <circle r={10} fill="#2b5" stroke="#fff" strokeWidth={2} />
+        </Marker>
+      ))}
+    </ComposableMap>
+  )
 }
 
 export default UsersPage;
