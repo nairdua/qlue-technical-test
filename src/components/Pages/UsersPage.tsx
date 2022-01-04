@@ -1,4 +1,5 @@
 import { useMemo } from "react";
+import LineChart from "../Chart/LineChart";
 import Container from "../Container/Container";
 import Table from "../Table/Table";
 
@@ -284,13 +285,28 @@ function UsersPage() {
           []
     )
 
+    const chartData = {
+      labels: ['2018', '2019', '2020', '2021'],
+      datasets: [
+        {
+          label: 'Total signups by year',
+          data: [28, 60, 92, 131],
+          backgroundColor: 'rgb(28,182,85)',
+          borderColor: 'rgba(33,196,93,0.25)',
+        }
+      ]
+    }
+
     return (
         <div>
             <Container>
                 <div className="mb-4">
-                    <span className="text-4xl text-gray-700">Users</span>
+                  <span className="text-4xl text-gray-700">Users</span>
                 </div>
                 <Table columns={columns} data={data} />
+                <div className="mt-4">
+                  <LineChart data={chartData} />
+                </div>
             </Container>
         </div>
     );

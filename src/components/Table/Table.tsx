@@ -10,7 +10,6 @@ function Table({ columns, data }) {
         headerGroups,
         prepareRow,
         page,
-
         canPreviousPage,
         canNextPage,
         pageOptions,
@@ -18,8 +17,7 @@ function Table({ columns, data }) {
         gotoPage,
         nextPage,
         previousPage,
-        setPageSize,
-        state: { pageIndex, pageSize },
+        state: { pageIndex },
     } = useTable(
         {
          columns,
