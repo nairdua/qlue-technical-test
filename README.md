@@ -1,7 +1,8 @@
 # SimpleDash
 
-**SimpleDash** is a dashboard mockup made for the Qlue front-end internship selection process.
+**Preview now available at https://objective-bell-45cc3c.netlify.app/**
 
+**SimpleDash** is a dashboard mockup made for the Qlue front-end internship selection process.
 
 For now, it consists of a homepage plus (fake) user and post views, with each view consisting
 of a table list of the corresponding data and (if possible) data visualization in the form of charts and maps.
