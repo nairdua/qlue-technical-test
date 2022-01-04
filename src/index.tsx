@@ -11,6 +11,7 @@ import {
   Routes,
   Route
 } from 'react-router-dom';
+import PostsPage from './components/Pages/PostsPage';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -18,6 +19,7 @@ ReactDOM.render(
       <Routes>
         <Route path="/" element={<App />}>
           <Route path="/users" element={<UsersPage />} />
+          <Route path="/posts" element={<PostsPage />} />
         </Route>
       </Routes>
     </BrowserRouter>
