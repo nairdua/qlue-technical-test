@@ -5,19 +5,22 @@ import reportWebVitals from './reportWebVitals'
 
 import App from './components/App/App';
 import UsersPage from './components/Pages/UsersPage';
+import PostsPage from './components/Pages/PostsPage';
+import HomePage from './components/Pages/HomePage';
 
 import {
   BrowserRouter,
   Routes,
-  Route
+  Route,
 } from 'react-router-dom';
-import PostsPage from './components/Pages/PostsPage';
+
 
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<App />}>
+          <Route path="/" element={<HomePage />} />
           <Route path="/users" element={<UsersPage />} />
           <Route path="/posts" element={<PostsPage />} />
         </Route>
