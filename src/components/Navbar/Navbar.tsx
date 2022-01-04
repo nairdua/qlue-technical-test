@@ -11,6 +11,14 @@ function Navbar() {
                     </span>
                 </Link>
             </div>
+            <div className="text-white font-semibold space-x-4">
+                <Link to="/users">
+                    Users
+                </Link>
+                <Link to="/posts">
+                    Posts
+                </Link>
+            </div>
         </nav>
     )
 }
